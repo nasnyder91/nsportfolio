@@ -1,0 +1,5 @@
+<div class="container text-center">
+  <h1 class="display-3">Nick Snyder | Developer</h1>
+  <br><br>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod dolore porro, atque, sunt doloremque enim fugiat libero labore quo repellat eum voluptatum. Amet, harum quidem iusto non debitis cupiditate fugiat!</p>
+</div>
