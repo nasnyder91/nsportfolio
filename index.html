@@ -10,12 +10,6 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!--<nav class="navbar navbar-dark fixed-top bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">Nick Snyder Portfolio</a>
-    </div>
-  </nav>-->
-
   <div class="jumbotron">
     <div class="container">
       <div id="codeText">
@@ -27,28 +21,83 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 text-center">
-          <a href="" class="btn">
+          <a class="btn" role="button" id="projectsBtn" tabindex="0">
             <h2>Projects</h2>
             <i class="fa fa-briefcase" aria-hidden="true" style="font-size:100px"></i>
           </a>
         </div>
-        <div class="col-md-4 text-center">
-          <a class="btn" href="">
+        <div class="col-md-4 text-center" id="resumeContainer">
+          <a class="btn" role="button" data-toggle="modal" data-target="#resumeModal">
             <h2>Resume</h2>
             <i class="fa fa-download" aria-hidden="true" style="font-size:100px"></i>
           </a>
         </div>
         <div class="col-md-4 text-center">
-          <a href="contact.html" class="btn">
+          <a class="btn" role="button" id="contactBtn" tabindex="0">
             <h2>Contact Me</h2>
             <i class="fa fa-envelope" aria-hidden="true" style="font-size:100px"></i>
           </a>
         </div>
     </div>
+    <hr>
+  </div>
+
+  <div class="container">
+    <div id="bottomInfo" style="display: none;" displaying="none">
+    </div>
+  </div>
+
+  <!--<div class='row' id="">
+    <div class='col-md-6 text-center'>
+      <a class='btn' href='https://itunes.apple.com/us/app/proportion-distortion/id1257412093?mt=8'>
+          <img id='proDisImg' src='img/ProportionDistortionIcon.png' class='img-responsive' alt=''>
+          <h2>Proportion Distortion</h2>
+      </a>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, totam enim dicta hic reprehenderit odit voluptatem nam autem quisquam consequuntur eius, et nulla quidem. Dolore.</p>
+    </div>
+    <div class='col-md-6 text-center'>
+      <a class='btn' href='https://itunes.apple.com/us/app/proportion-distortion/id1257412093?mt=8'>
+        <i class='fa fa-gamepad' aria-hidden='true' style='font-size:60px'></i>
+        <h2>Classic Games Collection</h2>
+      </a>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed vero inventore accusamus. Alias placeat non explicabo, officiis doloremque magnam dicta hic minima consequatur optio ex!</p>
+    </div>
+  </div>-->
+
+  <!-- Modal -->
+  <div id="resumeModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <div class="modal-header">
+          Resume
+          <a class="btn" href="img/ProportionDistortionIcon.png" download>Download</a>
+        </div>
+
+        <div class="modal-body">
+          <div>
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+            &nbsp; &nbsp;
+            <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+          </div>
+          <canvas id="resumeCanvas" style="width: 100%;"></canvas>
+        </div>
+
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/pdf.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

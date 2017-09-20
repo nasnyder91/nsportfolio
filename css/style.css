@@ -16,3 +16,19 @@ a{
   text-align: left;
   height: 40%;
 }
+
+#proDisImg{
+  height: 60px;
+  width: 60px;
+}
+
+#bottomInfo{
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .modal-xl {
+    width: 90%;
+   max-width:1200px;
+  }
+}
