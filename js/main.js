@@ -16,11 +16,11 @@ $(document).ready(function(){
     "*" + "<p id='codeText'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis atque rerum tempore expedita consectetur alias ducimus id tenetur labore quasi beatae numquam, autem deserunt omnis, ut sit, nisi tempora! Laudantium!</p>"+ "~" +
     "</div>";
 
-  var finalHTML = "<div class='container text-center'><h1 class='display-3'>Nick Snyder | Developer</h1><br><br><p id='codeText'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis atque rerum tempore expedita consectetur alias ducimus id tenetur labore quasi beatae numquam, autem deserunt omnis, ut sit, nisi tempora! Laudantium!</p></div>"
+  var finalHTML = $("#finalHTML");
 
-  var contactHTML = "<form class='form-horizontal col-sm-12' action='https://formspree.io/n.a.snyder@comcast.net' method='POST'><div class='form-group'><label>Name</label><input class='form-control required' placeholder='Your name' data-placement='top' data-trigger='manual' data-content='Must be at least 3 characters long, and must only contain letters.' type='text' name='name'></div><div class='form-group'><label>E-Mail</label><input class='form-control email' placeholder='Your email' data-placement='top' data-trigger='manual' data-content='Must be a valid e-mail address (user@gmail.com)' type='text' name='_replyto'></div><div class='form-group'><label>Message</label><textarea id='contactMessage' class='form-control' placeholder='Your message..' data-placement='top' data-trigger='manual' name='body'></textarea></div><div class='form-group'><button type='submit' class='modalButton btn btn-success pull-right'>Send</button></div><input type='hidden' name='_next' value='' /></form>";
+  var contactForm = $("#contactForm");
 
-  var projectsHTML = "<div class='row'><div class='col-md-6 text-center'><a class='btn' href='#'><img id='proDisImg' src='img/ProportionDistortionIcon.png' class='img-responsive' alt=''><h2>Proportion Distortion</h2></a><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, totam enim dicta hic reprehenderit odit voluptatem nam autem quisquam consequuntur eius, et nulla quidem. Dolore.</p></div><div class='col-md-6 text-center'><a class='btn' href='#'><i class='fa fa-gamepad' aria-hidden='true' style='font-size:60px'></i><h2>Classic Games Collection</h2></a><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed vero inventore accusamus. Alias placeat non explicabo, officiis doloremque magnam dicta hic minima consequatur optio ex!</p></div></div>";
+  var projectsInfo = $("#projectsInfo");
 
   var counter = 0;
   var timeoutValue;
@@ -28,6 +28,27 @@ $(document).ready(function(){
   //Creates random timeout value
   function randTimeout(){
     return (Math.floor(Math.random()*(76) + 5));
+  }
+
+  String.prototype.replaceAll = function(search, replace)
+  {
+      //if replace is not sent, return original string otherwise it will
+      //replace search string with 'undefined'.
+      if (replace === undefined) {
+          return this.toString();
+      }
+
+      return this.split(search).join(replace);
+  };
+
+  function colorText(input){
+    var output = input;
+    output = output.replaceAll("&lt;div", "&lt;<span style='color:red;'>div</span>");
+    output = output.replaceAll("class", "<span style='color:orange;'>class</span>");
+    output = output.replaceAll("id", "<span style='color:blue;'>id</span>");
+
+
+    return output;
   }
 
   //Animates writing of code on screen
@@ -41,10 +62,12 @@ $(document).ready(function(){
       $("#codeText").append(escapeHTML(vidText.charAt(counter)) + "|");
     }
 
+    $("#codeText").html(colorText($("#codeText").html()));
+
     if(counter+1 == vidText.length){
       $("#codeText").fadeOut(2000, function(){
-        $(this).html(finalHTML);
-      }).fadeIn(2000);
+        $(finalHTML).fadeIn(2000);
+      });
 
     }else{
       counter++;
@@ -59,35 +82,25 @@ $(document).ready(function(){
   };
 
   $("#contactBtn").click(function(){
-    if(($("#bottomInfo").is(":visible")) && ($("#bottomInfo").attr("displaying") == "contact")){
-      $("#bottomInfo").fadeOut("normal");
-    } else if(($("#bottomInfo").is(":visible")) && ($("#bottomInfo").attr("displaying") == "projects")){
+    if($("#bottomInfo").attr("displaying") == "projects"){
       $("#bottomInfo").fadeOut("normal",function(){
-        $("#bottomInfo").html(contactHTML);
-        $("#bottomInfo").fadeIn("normal");
-      });
-    } else{
-      $("#bottomInfo").html(contactHTML);
+      $(contactForm).show();
       $("#bottomInfo").fadeIn("normal");
-    }
-
-    $("#bottomInfo").attr("displaying", "contact");
+      $(projectsInfo).hide();
+      $("#bottomInfo").attr("displaying", "contact");
+      });
+    };
   });
 
   $("#projectsBtn").click(function(){
-    if(($("#bottomInfo").is(":visible")) && ($("#bottomInfo").attr("displaying") == "projects")){
-      $("#bottomInfo").fadeOut("normal");
-    } else if(($("#bottomInfo").is(":visible")) && ($("#bottomInfo").attr("displaying") == "contact")){
+    if($("#bottomInfo").attr("displaying") == "contact"){
       $("#bottomInfo").fadeOut("normal",function(){
-        $("#bottomInfo").html(projectsHTML);
-        $("#bottomInfo").fadeIn("normal");
-      });
-    } else{
-      $("#bottomInfo").html(projectsHTML);
+      $(contactForm).hide();
+      $(projectsInfo).show();
       $("#bottomInfo").fadeIn("normal");
-    }
-
-    $("#bottomInfo").attr("displaying", "projects");
+      $("#bottomInfo").attr("displaying", "projects");
+      });
+    };
   });
 
   // If absolute URL from the remote server is provided, configure the CORS

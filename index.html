@@ -13,12 +13,16 @@
   <div class="jumbotron">
     <div class="container">
       <div id="codeText">
-
+      </div>
+      <div class='container text-center' id="finalHTML" style="display:none;">
+        <h1 class='display-3'>Nick Snyder <span class="orange">|</span> <span class="blue">Developer</span></h1>
+        <br><br>
+        <p id='codeText'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis atque rerum tempore expedita consectetur alias ducimus id tenetur labore quasi beatae numquam, autem deserunt omnis, ut sit, nisi tempora! Laudantium!</p>
       </div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="buttons">
     <div class="row">
       <div class="col-md-4 text-center">
           <a class="btn" role="button" id="projectsBtn" tabindex="0">
@@ -27,7 +31,7 @@
           </a>
         </div>
         <div class="col-md-4 text-center" id="resumeContainer">
-          <a class="btn" role="button" data-toggle="modal" data-target="#resumeModal">
+          <a class="btn" role="button" tabindex="0" data-toggle="modal" data-target="#resumeModal">
             <h2>Resume</h2>
             <i class="fa fa-download" aria-hidden="true" style="font-size:100px"></i>
           </a>
@@ -39,52 +43,74 @@
           </a>
         </div>
     </div>
-    <hr>
   </div>
 
-  <div class="container">
-    <div id="bottomInfo" style="display: none;" displaying="none">
+  <div id="bottomInfo" displaying="projects">
+    <div class='row' id="projectsInfo">
+      <div class="col-md-1"></div>
+      <div class='col-md-4 text-center'>
+        <img id='proDisImg' src='img/ProportionDistortionIcon.png' class='img-responsive' alt=''><br>
+        <a class='btn' href='https://itunes.apple.com/us/app/proportion-distortion/id1257412093?mt=8'>
+            <h2>Proportion Distortion</h2>
+        </a>
+        <p>This is my first published app to the Apple App Store. I created this app to learn the fundamentals of swift, objective c, and Xcode. The app allows the user to enter and organize cooking recipes in an easy to navigate layout. It also gives the users the ability to change the proportions of the recipe (half, double, triple, etc.).</p>
+      </div>
+      <div class="col-md-1" style="border-right:1px #0a69c9 solid;"></div>
+      <div class="col-md-1"></div>
+      <div class='col-md-4 text-center'>
+        <i class='fa fa-gamepad' id="gameIcon" aria-hidden='true' style='font-size:60px'></i><br>
+        <a class='btn' href='http://www.nsclassicgames.com/'>
+          <h2>Classic Games Collection</h2>
+        </a>
+        <p>A collection of games using various javascript frameworks and libraries including jQuery, Bootstrap, and Phaser. Each game showcases different skills and techniques to display and manipulate objects in the browser.</p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="container" id="contactForm" style="display:none;">
+      <form class='form-horizontal col-sm-12 container' action='https://formspree.io/n.a.snyder@comcast.net' method='POST'>
+        <div class='form-group'>
+          <label>Name</label>
+          <input class='form-control required' placeholder='Your name' data-placement='top' data-trigger='manual' data-content='Must be at least 3 characters long, and must only contain letters.' type='text' name='name'></div>
+        <div class='form-group'>
+          <label>E-Mail</label>
+          <input class='form-control email' placeholder='Your email' data-placement='top' data-trigger='manual' data-content='Must be a valid e-mail address (user@gmail.com)' type='text' name='_replyto'>
+        </div>
+        <div class='form-group'>
+          <label>Message</label>
+          <textarea id='contactMessage' class='form-control' placeholder='Your message..' data-placement='top' data-trigger='manual' name='body'></textarea>
+        </div>
+        <div class='form-group'>
+          <button type='submit' class='modalButton btn btn-success pull-right'>Send</button>
+        </div>
+        <input type='hidden' name='_next' value='' />
+      </form>
     </div>
   </div>
 
-  <!--<div class='row' id="">
-    <div class='col-md-6 text-center'>
-      <a class='btn' href='https://itunes.apple.com/us/app/proportion-distortion/id1257412093?mt=8'>
-          <img id='proDisImg' src='img/ProportionDistortionIcon.png' class='img-responsive' alt=''>
-          <h2>Proportion Distortion</h2>
-      </a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, totam enim dicta hic reprehenderit odit voluptatem nam autem quisquam consequuntur eius, et nulla quidem. Dolore.</p>
-    </div>
-    <div class='col-md-6 text-center'>
-      <a class='btn' href='https://itunes.apple.com/us/app/proportion-distortion/id1257412093?mt=8'>
-        <i class='fa fa-gamepad' aria-hidden='true' style='font-size:60px'></i>
-        <h2>Classic Games Collection</h2>
-      </a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed vero inventore accusamus. Alias placeat non explicabo, officiis doloremque magnam dicta hic minima consequatur optio ex!</p>
-    </div>
-  </div>-->
+
 
   <!-- Modal -->
   <div id="resumeModal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
-        <button type="button" class="close" aria-label="Close" data-dismiss="modal">
-          <span aria-hidden="true">&times;</span>
-        </button>
-
         <div class="modal-header">
-          Resume
-          <a class="btn" href="img/ProportionDistortionIcon.png" download>Download</a>
+          <div id="headerTop">
+            <a class="btn" href="img/ProportionDistortionIcon.png" download><i class="fa fa-download" aria-hidden="true" style="font-size:3rem;"></i><br>Download</a>
+            <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <h2 class="text-center">Resume</h2>
         </div>
 
         <div class="modal-body">
-          <div>
-            <button id="prev">Previous</button>
-            <button id="next">Next</button>
-            &nbsp; &nbsp;
+          <div id="pdfBtns">
+            <button class="btn" id="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
             <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+            <button class="btn" id="next">Next <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
           </div>
-          <canvas id="resumeCanvas" style="width: 100%;"></canvas>
+          <canvas id="resumeCanvas" style="width: 80%;"></canvas>
         </div>
 
         <div class="modal-footer">
@@ -93,6 +119,8 @@
       </div>
     </div>
   </div>
+
+  <!--orange #ce5814  blue #0a69c9-->
 
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>

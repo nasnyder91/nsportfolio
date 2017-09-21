@@ -3,10 +3,15 @@ body,html{
     height: 100%;
     margin: 0px;
     padding: 0px;
+    overflow-x:hidden;
 }
 
 a{
   color: black;
+}
+
+.btn{
+  border: none;
 }
 
 .jumbotron{
@@ -15,7 +20,24 @@ a{
   color: #FFFFFF;
   text-align: left;
   height: 40%;
+  margin: 0;
 }
+
+#buttons{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#buttons a:hover{
+  color: #ce5814;
+  border: transparent;
+}
+
+#buttons a:focus{
+  color: black;
+  border: transparent;
+}
+
 
 #proDisImg{
   height: 60px;
@@ -24,6 +46,90 @@ a{
 
 #bottomInfo{
   padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  flex-grow:
+}
+
+#projectsInfo p{
+  text-align: justify;
+}
+
+#projectsInfo a:hover{
+  color: #ce5814;
+}
+
+#gameIcon{
+  color: black;
+}
+
+#contactForm button{
+  background-color: #ce5814;
+  border: none;
+  cursor: pointer;
+}
+
+#contactForm label{
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.modal-content{
+  display: block;
+}
+
+.modal-header{
+  display: block;
+  background-color: #343A40;
+  color: #FFFFFF;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+#headerTop{
+  display: flex;
+  justify-content: space-between;
+}
+
+#headerTop a:hover{
+  color: #ce5814;
+  border: transparent;
+}
+
+#headerTop a:focus{
+  color: black;
+  border: transparent;
+}
+
+.close{
+  font-size: 3rem;
+}
+
+.close:hover{
+  color: #ce5814;
+}
+
+#pdfBtns{
+  display: flex;
+  justify-content: space-between;
+}
+
+#pdfBtns button{
+  cursor: pointer;
+}
+
+#pdfBtns button:hover{
+  background-color: #0a69c9;
+}
+
+.orange{
+  color: #ce5814;
+}
+
+.blue{
+  color: #0a69c9;
 }
 
 @media (min-width: 768px) {
