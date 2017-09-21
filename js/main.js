@@ -11,7 +11,7 @@ $(document).ready(function(){
   };
 
   var vidText = "<div class='container text-center'>"+ "~" +
-    "*" + "<h1 class='display-3'>Nick Snyder | Developer</h1>"+ "~" +
+    "*" + "<h1 class='display-3'>Nick Snyder <span class='orange'>|</span> <span class='blue'>Developer</span></h1>"+ "~" +
     "*" + "<br><br>"+ "~" +
     "*" + "<p id='codeText'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis atque rerum tempore expedita consectetur alias ducimus id tenetur labore quasi beatae numquam, autem deserunt omnis, ut sit, nisi tempora! Laudantium!</p>"+ "~" +
     "</div>";
@@ -27,7 +27,7 @@ $(document).ready(function(){
 
   //Creates random timeout value
   function randTimeout(){
-    return (Math.floor(Math.random()*(76) + 5));
+    return (Math.floor(Math.random()*(101) + 20));
   }
 
   String.prototype.replaceAll = function(search, replace)
@@ -44,8 +44,22 @@ $(document).ready(function(){
   function colorText(input){
     var output = input;
     output = output.replaceAll("&lt;div", "&lt;<span style='color:red;'>div</span>");
-    output = output.replaceAll("class", "<span style='color:orange;'>class</span>");
-    output = output.replaceAll("id", "<span style='color:blue;'>id</span>");
+    output = output.replaceAll("div&gt;", "<span style='color:red;'>div</span>&gt;");
+
+    output = output.replaceAll("&lt;h1", "&lt;<span style='color:red;'>h1</span>");
+    output = output.replaceAll("h1&gt;", "<span style='color:red;'>h1</span>&gt;");
+
+    output = output.replaceAll("&lt;p", "&lt;<span style='color:red;'>p</span>");
+    output = output.replaceAll("p&gt;", "<span style='color:red;'>p</span>&gt;");
+
+    output = output.replaceAll("&lt;span", "&lt;<span style='color:red;'>span</span>");
+    output = output.replaceAll("span&gt;", "<span style='color:red;'>span</span>&gt;");
+
+    output = output.replaceAll("br&gt;", "<span style='color:red;'>br</span>&gt;");
+
+    output = output.replaceAll("class=", "<span style='color:orange;'>class</span>=");
+
+    output = output.replaceAll("id=", "<span style='color:blue;'>id</span>=");
 
 
     return output;
@@ -66,6 +80,7 @@ $(document).ready(function(){
 
     if(counter+1 == vidText.length){
       $("#codeText").fadeOut(2000, function(){
+        console.log($("#codeText").html());
         $(finalHTML).fadeIn(2000);
       });
 
