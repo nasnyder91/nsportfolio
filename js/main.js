@@ -13,7 +13,7 @@ $(document).ready(function(){
   var vidText = "<div class='container text-center'>"+ "~" +
     "*" + "<h1 class='display-3'>Nick Snyder <span class='orange'>|</span> <span class='blue'>Developer</span></h1>"+ "~" +
     "*" + "<br><br>"+ "~" +
-    "*" + "<p id='codeText'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis atque rerum tempore expedita consectetur alias ducimus id tenetur labore quasi beatae numquam, autem deserunt omnis, ut sit, nisi tempora! Laudantium!</p>"+ "~" +
+    "*" + "<h2>Welcome to my portfolio</h2>"+ "~" +
     "</div>";
 
   var finalHTML = $("#finalHTML");
@@ -25,9 +25,12 @@ $(document).ready(function(){
   var counter = 0;
   var timeoutValue;
 
+  var inQuote = false;
+  var quoteArr = [];
+
   //Creates random timeout value
   function randTimeout(){
-    return (Math.floor(Math.random()*(101) + 20));
+    return (Math.floor(Math.random()*(61) + 20));
   }
 
   String.prototype.replaceAll = function(search, replace)
@@ -49,8 +52,8 @@ $(document).ready(function(){
     output = output.replaceAll("&lt;h1", "&lt;<span style='color:red;'>h1</span>");
     output = output.replaceAll("h1&gt;", "<span style='color:red;'>h1</span>&gt;");
 
-    output = output.replaceAll("&lt;p", "&lt;<span style='color:red;'>p</span>");
-    output = output.replaceAll("p&gt;", "<span style='color:red;'>p</span>&gt;");
+    output = output.replaceAll("&lt;h2", "&lt;<span style='color:red;'>h2</span>");
+    output = output.replaceAll("h2&gt;", "<span style='color:red;'>h2</span>&gt;");
 
     output = output.replaceAll("&lt;span", "&lt;<span style='color:red;'>span</span>");
     output = output.replaceAll("span&gt;", "<span style='color:red;'>span</span>&gt;");
@@ -61,26 +64,38 @@ $(document).ready(function(){
 
     output = output.replaceAll("id=", "<span style='color:blue;'>id</span>=");
 
-
     return output;
   }
+
 
   //Animates writing of code on screen
   function writeCode(){
     $("#codeText").html($("#codeText").html().slice(0,-1));
+
+
     if(vidText.charAt(counter) == "~"){
       $("#codeText").append("<br>" + "|");
     }else if(vidText.charAt(counter) == "*"){
       $("#codeText").append("&nbsp; &nbsp; &nbsp; &nbsp; " + "|");
-    }else{
-      $("#codeText").append(escapeHTML(vidText.charAt(counter)) + "|");
+    }else if((vidText.charAt(counter) == "'") && (inQuote == false)){
+      $("#codeText").append("<span style='color:green;'>" + escapeHTML(vidText.charAt(counter)) + "</span>" + "|");
+      inQuote = true;
+    }else if((vidText.charAt(counter) == "'") && (inQuote == true)){
+      $("#codeText").append("<span style='color:#24cc18;'>" + escapeHTML(vidText.charAt(counter)) + "</span>" + "|");
+      inQuote = false;
+    } else{
+      if(inQuote == true){
+        $("#codeText").append("<span style='color:#24cc18;'>" + escapeHTML(vidText.charAt(counter)) + "</span>" + "|");
+      }else{
+        $("#codeText").append(escapeHTML(vidText.charAt(counter)) + "|");
+      }
     }
+
 
     $("#codeText").html(colorText($("#codeText").html()));
 
     if(counter+1 == vidText.length){
       $("#codeText").fadeOut(2000, function(){
-        console.log($("#codeText").html());
         $(finalHTML).fadeIn(2000);
       });
 
@@ -120,7 +135,7 @@ $(document).ready(function(){
 
   // If absolute URL from the remote server is provided, configure the CORS
 // header on that server.
-var url = 'Pasadena Rental Lease.pdf';
+var url = 'resume.pdf';
 
 // Disable workers to avoid yet another cross-origin issue (workers need
 // the URL of the script to be loaded, and dynamically loading a cross-origin
@@ -208,7 +223,7 @@ function onNextPage() {
 }
 document.getElementById('next').addEventListener('click', onNextPage);
 
-/**
+/*
  * Asynchronously downloads PDF.
  */
 PDFJS.getDocument(url).then(function(pdfDoc_) {

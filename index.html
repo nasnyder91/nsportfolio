@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pumba Portfolio</title>
+  <title>NS Portfolio</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -17,7 +17,7 @@
       <div class='container text-center' id="finalHTML" style="display:none;">
         <h1 class='display-3'>Nick Snyder <span class="orange">|</span> <span class="blue">Developer</span></h1>
         <br><br>
-        <p id='codeText'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis atque rerum tempore expedita consectetur alias ducimus id tenetur labore quasi beatae numquam, autem deserunt omnis, ut sit, nisi tempora! Laudantium!</p>
+        <h2>Welcome to my portfolio.</h2>
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@
         <a class='btn' href='https://itunes.apple.com/us/app/proportion-distortion/id1257412093?mt=8'>
             <h2>Proportion Distortion</h2>
         </a>
-        <p>This is my first published app to the Apple App Store. I created this app to learn the fundamentals of swift, objective c, and Xcode. The app allows the user to enter and organize cooking recipes in an easy to navigate layout. It also gives the users the ability to change the proportions of the recipe (half, double, triple, etc.).</p>
+        <p>This app, coded in Swift for the iPhone, is a cooking recipe keeping app. It allows the user to enter and organize cooking recipes in an easy to navigate layout. It also gives the users the ability to change the proportions of the recipe (half, double, triple, etc.).</p>
       </div>
       <div class="col-md-1" style="border-right:1px #0a69c9 solid;"></div>
       <div class="col-md-1"></div>
@@ -88,6 +88,16 @@
     </div>
   </div>
 
+  <footer>
+    <div class="container">
+      <ul id="socialLinks" class="list-inline">
+        <li class="col-xs-12 col-sm-4 col-md-3 col-lg-2 socialLink list-inline-item"><a href="https://www.linkedin.com/in/nick-snyder-development
+          "><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+        <li class="col-xs-12 col-sm-3 col-md-3 col-lg-2 socialLink list-inline-item"><a href="https://github.com/nasnyder91"><i class="footerIcon fa fa-github" aria-hidden="true"></i>GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
 
 
   <!-- Modal -->
@@ -96,7 +106,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <div id="headerTop">
-            <a class="btn" href="img/ProportionDistortionIcon.png" download><i class="fa fa-download" aria-hidden="true" style="font-size:3rem;"></i><br>Download</a>
+            <a class="btn" id="downloadBtn" href="resume.pdf" download="NickSnyderResume"> <i class="fa fa-download" aria-hidden="true"></i></a>
             <button type="button" class="close" aria-label="Close" data-dismiss="modal">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -104,8 +114,8 @@
           <h2 class="text-center">Resume</h2>
         </div>
 
-        <div class="modal-body">
-          <div id="pdfBtns">
+        <div class="modal-body text-center">
+          <div id="pdfBtns" style="display:none;">
             <button class="btn" id="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
             <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
             <button class="btn" id="next">Next <i class="fa fa-arrow-right" aria-hidden="true"></i></button>

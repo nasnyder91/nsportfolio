@@ -4,6 +4,7 @@ body,html{
     margin: 0px;
     padding: 0px;
     overflow-x:hidden;
+    position: relative;
 }
 
 a{
@@ -23,6 +24,11 @@ a{
   margin: 0;
 }
 
+#finalHTML h2{
+  font-weight: normal;
+  letter-spacing: .3em;
+}
+
 #buttons{
   padding-top: 20px;
   padding-bottom: 20px;
@@ -38,7 +44,6 @@ a{
   border: transparent;
 }
 
-
 #proDisImg{
   height: 60px;
   width: 60px;
@@ -53,8 +58,23 @@ a{
   flex-grow:
 }
 
+#projectsInfo{
+  margin-bottom: 65px;
+}
+
 #projectsInfo p{
   text-align: justify;
+  margin: auto;
+}
+
+#projectsInfo a{
+  max-width: 100%;
+}
+
+#projectsInfo h2{
+  word-wrap: break-word;
+  font-size: 2rem;
+  max-width: 100%;
 }
 
 #projectsInfo a:hover{
@@ -63,6 +83,10 @@ a{
 
 #gameIcon{
   color: black;
+}
+
+#contactForm{
+  padding-bottom: 20px;
 }
 
 #contactForm button{
@@ -89,22 +113,32 @@ a{
 }
 
 #headerTop{
-  display: flex;
-  justify-content: space-between;
 }
 
-#headerTop a:hover{
-  color: #ce5814;
+#downloadBtn{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  color:#ce5814;
+  font-size: 4rem;
+}
+
+#downloadBtn:hover{
+  color: #0a69c9;
   border: transparent;
 }
 
-#headerTop a:focus{
-  color: black;
+#downloadBtn:focus{
+  color:#0a69c9;
   border: transparent;
 }
 
 .close{
+  position: relative;
+  top: 0px;
+  right: 10px;
   font-size: 3rem;
+  color: white;
 }
 
 .close:hover{
@@ -124,12 +158,95 @@ a{
   background-color: #0a69c9;
 }
 
+footer{
+  bottom: 0;
+  width: 100%;
+  background-color: #343A40;
+  padding:0;
+}
+
+#socialLinks{
+  font-size: 26px !important;
+  margin-bottom: 0;
+
+}
+
+#socialLinks li {
+  padding: 5px 0 5px 0;
+}
+
+.socialLink a {
+  text-decoration: none;
+    color: grey;
+}
+
+.socialLink a:hover {
+    color: white;
+}
+
+.socialLink i {
+  padding-right: 10px;
+  color: white;
+}
+
 .orange{
   color: #ce5814;
 }
 
 .blue{
   color: #0a69c9;
+}
+
+@media(max-width: 1200px){
+  #projectsInfo h2{
+    font-size: 1.5rem;
+  }
+}
+
+@media(max-width: 1000px){
+  #finalHTML h1{
+    font-size: 2.4rem;
+  }
+  #projectsInfo h2{
+    font-size: 1rem;
+  }
+  .jumbotron{
+    height: 30%;
+  }
+}
+
+@media(max-width: 768px){
+  #finalHTML h2{
+    font-size: 1rem;
+  }
+  #finalHTML h1{
+    font-size: 2rem;
+  }
+  .jumbotron{
+    height: 25%;
+  }
+  #codeText{
+    font-size: .8rem;
+  }
+  #projectsInfo p{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #socialLinks {
+    text-align: center;
+  }
+}
+
+@media(max-width: 550px){
+  #finalHTML h2{
+    font-size: .8rem;
+  }
+  .jumbotron{
+    height: 20%;
+  }
+  #codeText{
+    font-size: .6rem;
+  }
 }
 
 @media (min-width: 768px) {
