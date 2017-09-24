@@ -54,6 +54,9 @@ $(document).ready(function(){
              success:function() {
                  console.log('success');
                  $('#formThankYou').show();
+                 $('#name').val('');
+                 $('#email').val('');
+                 $('#contactMessage').val('');
              }
 
          });
