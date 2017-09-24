@@ -238,7 +238,7 @@ footer{
   }
 }
 
-@media(max-width: 768px){
+@media(max-width: 767px){
   .jumbotron{
     height: 180px;
   }
@@ -373,6 +373,10 @@ footer{
     padding-left: 10px;
     padding-right: 10px;
   }
+}
+
+@@media (width: 768px, height: 1024px) {
+
 }
 
 @media (min-width: 768px) {
