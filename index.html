@@ -14,9 +14,9 @@
     <div class="container">
       <div id="codeText">
       </div>
-      <div class='container text-center' id="finalHTML" style="display:none;">
+      <div class='text-center' id="finalHTML" style="display:none;">
         <h1 class='display-3'>Nick Snyder <span class="orange">|</span> <span class="blue">Developer</span></h1>
-        <br><br>
+        <br class="break"><br class="break">
         <h2>Welcome to my portfolio.</h2>
       </div>
     </div>
@@ -24,22 +24,22 @@
 
   <div class="container" id="buttons">
     <div class="row">
-      <div class="col-md-4 text-center">
+      <div class="col-xs-2 col-sm-4 col-md-4 text-center">
           <a class="btn" role="button" id="projectsBtn" tabindex="0">
             <h2>Projects</h2>
-            <i class="fa fa-briefcase" aria-hidden="true" style="font-size:100px"></i>
+            <i class="fa fa-briefcase" aria-hidden="true"></i>
           </a>
         </div>
-        <div class="col-md-4 text-center" id="resumeContainer">
+        <div class="col-xs-2 col-sm-4 col-md-4 text-center" id="resumeContainer">
           <a class="btn" role="button" tabindex="0" data-toggle="modal" data-target="#resumeModal">
             <h2>Resume</h2>
-            <i class="fa fa-download" aria-hidden="true" style="font-size:100px"></i>
+            <i class="fa fa-download" aria-hidden="true"></i>
           </a>
         </div>
-        <div class="col-md-4 text-center">
+        <div class="col-xs-2 col-sm-4 col-md-4 text-center">
           <a class="btn" role="button" id="contactBtn" tabindex="0">
             <h2>Contact Me</h2>
-            <i class="fa fa-envelope" aria-hidden="true" style="font-size:100px"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
           </a>
         </div>
     </div>
@@ -47,41 +47,41 @@
 
   <div id="bottomInfo" displaying="projects">
     <div class='row' id="projectsInfo">
-      <div class="col-md-1"></div>
-      <div class='col-md-4 text-center'>
+      <div class='col-md-6 text-center project' id="firstProject">
         <img id='proDisImg' src='img/ProportionDistortionIcon.png' class='img-responsive' alt=''><br>
         <a class='btn' href='https://itunes.apple.com/us/app/proportion-distortion/id1257412093?mt=8'>
             <h2>Proportion Distortion</h2>
         </a>
         <p>This app, coded in Swift for the iPhone, is a cooking recipe keeping app. It allows the user to enter and organize cooking recipes in an easy to navigate layout. It also gives the users the ability to change the proportions of the recipe (half, double, triple, etc.).</p>
+        <div class="container">
+          <hr id="line">
+        </div>
       </div>
-      <div class="col-md-1" style="border-right:1px #0a69c9 solid;"></div>
-      <div class="col-md-1"></div>
-      <div class='col-md-4 text-center'>
+      <div class='col-md-6 text-center project'>
         <i class='fa fa-gamepad' id="gameIcon" aria-hidden='true' style='font-size:60px'></i><br>
         <a class='btn' href='http://www.nsclassicgames.com/'>
           <h2>Classic Games Collection</h2>
         </a>
         <p>A collection of games using various javascript frameworks and libraries including jQuery, Bootstrap, and Phaser. Each game showcases different skills and techniques to display and manipulate objects in the browser.</p>
       </div>
-      <div class="col-md-1"></div>
     </div>
 
     <div class="container" id="contactForm" style="display:none;">
-      <form class='form-horizontal col-sm-12 container' action='https://formspree.io/n.a.snyder@comcast.net' method='POST'>
+      <h3 class="orange" id="formThankYou" style="display:none;">Your message has been sent.  Thank you.</h3>
+      <form class='form-horizontal col-sm-12 container' id="theForm">
         <div class='form-group'>
           <label>Name</label>
-          <input class='form-control required' placeholder='Your name' data-placement='top' data-trigger='manual' data-content='Must be at least 3 characters long, and must only contain letters.' type='text' name='name'></div>
+          <input class='form-control' id="name" placeholder='Your name...' type='text' name='name' required title="First Name"></div>
         <div class='form-group'>
           <label>E-Mail</label>
-          <input class='form-control email' placeholder='Your email' data-placement='top' data-trigger='manual' data-content='Must be a valid e-mail address (user@gmail.com)' type='text' name='_replyto'>
+          <input class='form-control' id="email" placeholder='Your email...' type='email' required>
         </div>
         <div class='form-group'>
           <label>Message</label>
-          <textarea id='contactMessage' class='form-control' placeholder='Your message..' data-placement='top' data-trigger='manual' name='body'></textarea>
+          <textarea id='contactMessage' class='form-control' placeholder='Your message...' name='body' required></textarea>
         </div>
         <div class='form-group'>
-          <button type='submit' class='modalButton btn btn-success pull-right'>Send</button>
+          <button type='submit' class='btn btn-success pull-right'>Send</button>
         </div>
         <input type='hidden' name='_next' value='' />
       </form>
@@ -111,7 +111,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <h2 class="text-center">Resume</h2>
+          <h2 class="text-center orange">Resume</h2>
         </div>
 
         <div class="modal-body text-center">

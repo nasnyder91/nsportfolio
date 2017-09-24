@@ -26,12 +26,16 @@ a{
 
 #finalHTML h2{
   font-weight: normal;
-  letter-spacing: .3em;
+  letter-spacing: .1em
 }
 
 #buttons{
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+#buttons i{
+  font-size:100px;
 }
 
 #buttons a:hover{
@@ -81,6 +85,15 @@ a{
   color: #ce5814;
 }
 
+.project p{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#firstProject{
+  border-right:1px #0a69c9 solid;
+}
+
 #gameIcon{
   color: black;
 }
@@ -112,24 +125,25 @@ a{
   padding-bottom: 10px;
 }
 
-#headerTop{
+#headerTop h2{
+
 }
 
 #downloadBtn{
   position: relative;
   top: 0px;
   left: 0px;
-  color:#ce5814;
-  font-size: 4rem;
+  color:#FFFFFF;
+  font-size: 3rem;
 }
 
 #downloadBtn:hover{
-  color: #0a69c9;
+  color: #ce5814;
   border: transparent;
 }
 
 #downloadBtn:focus{
-  color:#0a69c9;
+  color:#ce5814;
   border: transparent;
 }
 
@@ -138,7 +152,8 @@ a{
   top: 0px;
   right: 10px;
   font-size: 3rem;
-  color: white;
+  color: #FFFFFF;
+  opacity: 1.0;
 }
 
 .close:hover{
@@ -197,6 +212,10 @@ footer{
   color: #0a69c9;
 }
 
+#line{
+  display: none;
+}
+
 @media(max-width: 1200px){
   #projectsInfo h2{
     font-size: 1.5rem;
@@ -216,15 +235,23 @@ footer{
 }
 
 @media(max-width: 768px){
-  #finalHTML h2{
-    font-size: 1rem;
-  }
-  #finalHTML h1{
-    font-size: 2rem;
-  }
   .jumbotron{
-    height: 25%;
+    height: 180px;
   }
+
+  #finalHTML h1{
+    font-size: 34px;
+  }
+
+  #finalHTML h2{
+    padding-top: 30px;
+    font-size: 24px;
+  }
+
+  .break{
+    display: none;
+  }
+
   #codeText{
     font-size: .8rem;
   }
@@ -235,17 +262,112 @@ footer{
   #socialLinks {
     text-align: center;
   }
+
+  #buttons h2{
+    font-size: 24px;
+  }
+
+  #buttons i{
+    font-size: 35px;
+
+  }
+  #buttons a{
+    padding: 0;
+  }
+
+  #buttons .row div{
+    flex-direction: column !important;
+    padding: 0;
+  }
+
+  #firstProject{
+    border-right: 0;
+  }
+
+  #line{
+    display:block;
+    border-color: #0a69c9;
+  }
 }
 
-@media(max-width: 550px){
-  #finalHTML h2{
-    font-size: .8rem;
-  }
+@media(max-width: 575px){
   .jumbotron{
-    height: 20%;
+    height: 180px;
   }
+
+  #finalHTML h1{
+    font-size: 26px;
+  }
+
+  #finalHTML h2{
+    padding-top: 30px;
+    font-size: 18px;
+  }
+
+  .break{
+    display: none;
+  }
+
   #codeText{
     font-size: .6rem;
+  }
+
+  #buttons .row{
+    flex-direction: row;
+    flex-wrap: nowrap !important;
+  }
+  #buttons h2{
+    font-size: 22px;
+  }
+
+  #buttons i{
+  }
+  #buttons a{
+    padding: 0;
+  }
+
+  #buttons .row div{
+    padding: 0;
+  }
+
+  #downloadBtn{
+    font-size: 2rem;
+  }
+
+  .close{
+    font-size: 2rem;
+  }
+}
+
+@media(max-width: 385px){
+  .jumbotron{
+    height: 150px;
+  }
+
+  #finalHTML h1{
+    font-size: 22px;
+  }
+
+  #finalHTML h2{
+    padding-top: 30px;
+    font-size: 16px;
+  }
+
+  .break{
+    display: none;
+  }
+
+  #buttons h2{
+    font-size: 18px;
+  }
+
+  #buttons i{
+    font-size: 30px;
+  }
+
+  #buttons .row div{
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 

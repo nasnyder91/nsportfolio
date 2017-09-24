@@ -20,6 +20,8 @@ $(document).ready(function(){
 
   var contactForm = $("#contactForm");
 
+  var form = $("#theForm");
+
   var projectsInfo = $("#projectsInfo");
 
   var counter = 0;
@@ -27,6 +29,39 @@ $(document).ready(function(){
 
   var inQuote = false;
   var quoteArr = [];
+
+  $('#theForm').on('submit', function(e) {
+       e.preventDefault();
+
+       var name = $('#name').val();
+
+       var email = $('#email').val();
+
+       var comments = $('#contactMessage').val();
+
+       if(form[0].checkValidity()){
+         $.ajax({
+             url:'https://formspree.io/n.a.snyder@comcast.net',
+             method:'POST',
+             data:{
+                 name:name,
+                 _replyto:email,
+                  email:email,
+                 comments:comments,
+                 _subject:'Portfolio form submission',
+             },
+             dataType:"json",
+             success:function() {
+                 console.log('success');
+                 $('#formThankYou').show();
+             }
+
+         });
+       } else{
+         console.log("not valid");
+         form.find(':submit').click();
+       }
+   });
 
   //Creates random timeout value
   function randTimeout(){
