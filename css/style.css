@@ -92,6 +92,7 @@ a{
 
 #firstProject{
   border-right:1px #0a69c9 solid;
+  margin-bottom: 80px;
 }
 
 #gameIcon{
@@ -290,6 +291,7 @@ footer{
 
   #firstProject{
     border-right: 0;
+    margin-bottom: 0;
   }
 
   #line{
