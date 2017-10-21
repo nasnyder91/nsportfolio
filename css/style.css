@@ -48,9 +48,9 @@ a{
   border: transparent;
 }
 
-#proDisImg{
-  height: 60px;
+.thumbnailImage{
   width: 60px;
+  height: auto;
 }
 
 #bottomInfo{
@@ -91,8 +91,11 @@ a{
 }
 
 #firstProject{
+  padding-bottom: 80px;
+}
+
+.leftProject{
   border-right:1px #0a69c9 solid;
-  margin-bottom: 80px;
 }
 
 #gameIcon{
@@ -221,7 +224,7 @@ footer{
   color: #0a69c9;
 }
 
-#line{
+.line{
   display: none;
 }
 
@@ -290,11 +293,14 @@ footer{
   }
 
   #firstProject{
-    border-right: 0;
-    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
-  #line{
+  .leftProject{
+    border-right: 0;
+  }
+
+  .line{
     display:block;
     border-color: #0a69c9;
   }
